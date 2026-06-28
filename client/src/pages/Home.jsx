@@ -4,17 +4,16 @@ import NavBar from "../components/NavBar";
 
 function Home() {
   const navigate = useNavigate();
-
   const [role, setRole] = useState("frontend");
   const [difficulty, setDifficulty] = useState("easy");
-  const [useRealAI, setUseRealAI] = useState(false);   // Toggle State
+  const [useRealAI, setUseRealAI] = useState(false);
 
   const startInterview = () => {
     navigate("/interview", {
       state: {
         role,
         difficulty,
-        useRealAI,        // Pass toggle value to Interview page
+        useRealAI,
       },
     });
   };
@@ -22,10 +21,9 @@ function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <NavBar />
-
+      
       <div className="flex justify-center items-center px-6 py-16">
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-10 w-full max-w-2xl shadow-lg">
-
           <h1 className="text-5xl font-bold text-center mb-4">
             AI Technical Interview Platform
           </h1>
@@ -36,7 +34,6 @@ function Home() {
           {/* === AI MODE TOGGLE === */}
           <div className="mb-8 flex items-center justify-center gap-4">
             <span className="text-sm text-slate-400">Mock Mode</span>
-            
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"
@@ -47,7 +44,6 @@ function Home() {
               <div className="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-blue-600"></div>
               <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition peer-checked:translate-x-5"></div>
             </label>
-
             <span className="text-sm font-medium text-blue-400">Real AI Mode</span>
           </div>
 
@@ -87,6 +83,11 @@ function Home() {
             Start Interview
           </button>
         </div>
+      </div>
+
+      {/* Built by Section */}
+      <div className="text-center py-8 text-slate-500 text-sm">
+        Built by <span className="text-blue-400 font-medium">Shreya Dutta</span>
       </div>
     </div>
   );
